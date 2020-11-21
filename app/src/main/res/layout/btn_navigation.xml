@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_nav"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/windowBackground"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <LinearLayout
+        android:id="@+id/ll_study"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/ib_study_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="?android:attr/windowBackground"
+            android:clickable="false"
+            android:src="@drawable/ic_tabbar_study_selected_icon" />
+<!--        TODO 以为是卡顿，其实是点击事件被Button捕捉-->
+
+        <TextView
+            android:id="@+id/tv_study_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/bnav_margin_bottom"
+            android:text="学习"
+            android:textSize="@dimen/bnav_title_txt" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/ib_class_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="?android:attr/windowBackground"
+            android:clickable="false"
+            android:src="@drawable/ic_tabbar_class_icon" />
+
+        <TextView
+            android:id="@+id/tv_class_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/bnav_margin_bottom"
+            android:text="班级"
+            android:textSize="@dimen/bnav_title_txt" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/ib_profile_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="?android:attr/windowBackground"
+            android:clickable="false"
+            android:src="@drawable/ic_tabbar_profile_icon" />
+
+        <TextView
+            android:id="@+id/tv_profile_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/bnav_margin_bottom"
+            android:layout_gravity="center"
+            android:text="我的"
+            android:textSize="@dimen/bnav_title_txt" />
+
+    </LinearLayout>
+
+</LinearLayout>

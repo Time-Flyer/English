@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bnav_title_txt">10sp</dimen>
+    <dimen name="bnav_margin_bottom">3dp</dimen>
+</resources>
