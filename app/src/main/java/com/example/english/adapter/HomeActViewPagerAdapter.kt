@@ -11,7 +11,7 @@ const val STUDY_PAGE = 0
 const val CLASS_PAGE = 1
 const val PROFILE_PAGE = 2
 
-class MainViewPagerAdapter(fm : FragmentManager)
+class HomeActViewPagerAdapter(fm : FragmentManager)
     : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     private val fragmentList = ArrayList<Fragment>()

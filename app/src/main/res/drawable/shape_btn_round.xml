@@ -7,4 +7,10 @@
 
     <!-- 圆角的半径 -->
     <corners android:radius="240dp" />
+
+    <padding
+        android:top="5dp"
+        android:bottom="5dp"
+        android:left="10dp"
+        android:right="10dp" />
 </shape>

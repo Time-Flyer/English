@@ -6,7 +6,7 @@ import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.ViewPager
 import com.example.english.R
 import com.example.english.adapter.CLASS_PAGE
-import com.example.english.adapter.MainViewPagerAdapter
+import com.example.english.adapter.HomeActViewPagerAdapter
 import com.example.english.adapter.PROFILE_PAGE
 import com.example.english.adapter.STUDY_PAGE
 import kotlinx.android.synthetic.main.activity_home.*
@@ -39,21 +39,21 @@ class HomeActivity : AppCompatActivity() {
             }
         })
 
-        ll_study.setOnClickListener {
+        ll_nav_study.setOnClickListener {
             if (curSelected != STUDY_PAGE) {
                 vp_nav.currentItem = STUDY_PAGE
                 navSelect(STUDY_PAGE)
             }
         }
 
-        ll_class.setOnClickListener {
+        ll_nav_class.setOnClickListener {
             if (curSelected != CLASS_PAGE) {
                 vp_nav.currentItem = CLASS_PAGE
                 navSelect(CLASS_PAGE)
             }
         }
 
-        ll_profile.setOnClickListener {
+        ll_nav_profile.setOnClickListener {
             if (curSelected != PROFILE_PAGE) {
                 vp_nav.currentItem = PROFILE_PAGE
                 navSelect(PROFILE_PAGE)
@@ -63,12 +63,44 @@ class HomeActivity : AppCompatActivity() {
 
     private fun initView() {
 
-        vp_nav.adapter = MainViewPagerAdapter(supportFragmentManager)
+        vp_nav.adapter = HomeActViewPagerAdapter(supportFragmentManager) // TODO error null pointer
         vp_nav.currentItem = curSelected
 
         navSelect(curSelected)
+    }
 
-        /*
+    private fun navSelect(selected: Int) {
+        curSelected = selected
+        when (selected) {
+            STUDY_PAGE -> {
+                iv_study_icon.setImageResource(R.drawable.ic_tabbar_study_selected_icon)
+                tv_study_icon_title.setTextColor(ContextCompat.getColor(this, R.color.active))
+                iv_class_icon.setImageResource(R.drawable.ic_tabbar_class_icon)
+                tv_class_icon_title.setTextColor(ContextCompat.getColor(this, R.color.inactive))
+                iv_profile_icon.setImageResource(R.drawable.ic_tabbar_profile_icon)
+                tv_profile_icon_title.setTextColor(ContextCompat.getColor(this, R.color.inactive))
+            }
+            CLASS_PAGE -> {
+                iv_study_icon.setImageResource(R.drawable.ic_tabbar_study_icon)
+                tv_study_icon_title.setTextColor(ContextCompat.getColor(this, R.color.inactive))
+                iv_class_icon.setImageResource(R.drawable.ic_tabbar_class_selected_icon)
+                tv_class_icon_title.setTextColor(ContextCompat.getColor(this, R.color.active))
+                iv_profile_icon.setImageResource(R.drawable.ic_tabbar_profile_icon)
+                tv_profile_icon_title.setTextColor(ContextCompat.getColor(this, R.color.inactive))
+            }
+            PROFILE_PAGE -> {
+                iv_study_icon.setImageResource(R.drawable.ic_tabbar_study_icon)
+                tv_study_icon_title.setTextColor(ContextCompat.getColor(this, R.color.inactive))
+                iv_class_icon.setImageResource(R.drawable.ic_tabbar_class_icon)
+                tv_class_icon_title.setTextColor(ContextCompat.getColor(this, R.color.inactive))
+                iv_profile_icon.setImageResource(R.drawable.ic_tabbar_profile_selected_icon)
+                tv_profile_icon_title.setTextColor(ContextCompat.getColor(this, R.color.active))
+            }
+        }
+    }
+}
+
+/*
         val item1 = AHBottomNavigationItem("学习", R.drawable.ic_tabbar_study_selected_icon)
         val item2 = AHBottomNavigationItem("班级", R.drawable.ic_tabbar_class_icon)
         val item3 = AHBottomNavigationItem("我的", R.drawable.ic_tabbar_profile_icon)
@@ -84,36 +116,22 @@ class HomeActivity : AppCompatActivity() {
             bottom_nav.getItem(pos).setDrawable(R.drawable.bg_homepage)
             true
         }
-        */
-    }
-
-    private fun navSelect(selected: Int) {
-        curSelected = selected
-        when (selected) {
+*/
+/*
             STUDY_PAGE -> {
-                ib_study_icon.setImageResource(R.drawable.ic_tabbar_study_selected_icon)
-                tv_study_title.setTextColor(ContextCompat.getColor(this, R.color.active))
-                ib_class_icon.setImageResource(R.drawable.ic_tabbar_class_icon)
-                tv_class_title.setTextColor(ContextCompat.getColor(this, R.color.inactive))
-                ib_profile_icon.setImageResource(R.drawable.ic_tabbar_profile_icon)
-                tv_profile_title.setTextColor(ContextCompat.getColor(this, R.color.inactive))
+                tv_nav_study.setTextColor(ContextCompat.getColor(this, R.color.active))
+                tv_nav_class.setTextColor(ContextCompat.getColor(this, R.color.inactive))
+                tv_nav_profile.setTextColor(ContextCompat.getColor(this, R.color.inactive))
+
             }
             CLASS_PAGE -> {
-                ib_study_icon.setImageResource(R.drawable.ic_tabbar_study_icon)
-                tv_study_title.setTextColor(ContextCompat.getColor(this, R.color.inactive))
-                ib_class_icon.setImageResource(R.drawable.ic_tabbar_class_selected_icon)
-                tv_class_title.setTextColor(ContextCompat.getColor(this, R.color.active))
-                ib_profile_icon.setImageResource(R.drawable.ic_tabbar_profile_icon)
-                tv_profile_title.setTextColor(ContextCompat.getColor(this, R.color.inactive))
+                tv_nav_study.setTextColor(ContextCompat.getColor(this, R.color.inactive))
+                tv_nav_class.setTextColor(ContextCompat.getColor(this, R.color.active))
+                tv_nav_profile.setTextColor(ContextCompat.getColor(this, R.color.inactive))
             }
             PROFILE_PAGE -> {
-                ib_study_icon.setImageResource(R.drawable.ic_tabbar_study_icon)
-                tv_study_title.setTextColor(ContextCompat.getColor(this, R.color.inactive))
-                ib_class_icon.setImageResource(R.drawable.ic_tabbar_class_icon)
-                tv_class_title.setTextColor(ContextCompat.getColor(this, R.color.inactive))
-                ib_profile_icon.setImageResource(R.drawable.ic_tabbar_profile_selected_icon)
-                tv_profile_title.setTextColor(ContextCompat.getColor(this, R.color.active))
+                tv_nav_study.setTextColor(ContextCompat.getColor(this, R.color.inactive))
+                tv_nav_class.setTextColor(ContextCompat.getColor(this, R.color.inactive))
+                tv_nav_profile.setTextColor(ContextCompat.getColor(this, R.color.active))
             }
-        }
-    }
-}
+ */

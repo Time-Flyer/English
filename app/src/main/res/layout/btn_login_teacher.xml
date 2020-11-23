@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="64dp"
     android:layout_marginBottom="48dp"
-    android:background="@drawable/btn_shape_round"
+    android:background="@drawable/shape_btn_round"
     android:text="我是老师"
     android:textColor="@color/white"
     android:textSize="16sp"

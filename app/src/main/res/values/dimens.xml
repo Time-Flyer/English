@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="bnav_title_txt">10sp</dimen>
-    <dimen name="bnav_margin_bottom">3dp</dimen>
+    <dimen name="txt_10">10sp</dimen>
+    <dimen name="card_radius">15dp</dimen>
+    <dimen name="margin_border_7">7dp</dimen>
+    <dimen name="margin_border_15">15dp</dimen>
+    <dimen name="margin_card_up_and_down">15dp</dimen>
 </resources>

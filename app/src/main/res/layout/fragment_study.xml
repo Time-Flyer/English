@@ -3,15 +3,172 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <include layout="@layout/item_study_header"
+        android:id="@+id/tmp_study_top" />
+
+    <include layout="@layout/item_study_btn_group"
+        android:id="@+id/tmp_study_btn_group"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="敬请期待"
+        app:layout_constraintTop_toBottomOf="@+id/tmp_study_top"/>
+
+<!--
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent">
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_study_student_avatar"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="@dimen/margin_border_7"
+            android:src="@drawable/default_student_avatar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_study_student_name" />
+
+        <TextView
+            android:id="@+id/tv_study_student_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_border_7"
+            android:text="Hi, xxx同学"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/civ_study_student_avatar" />
+
+        <ImageButton
+            android:id="@+id/ib_study_message_box"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="@dimen/margin_border_7"
+            android:layout_marginBottom="@dimen/margin_border_7"
+            android:layout_marginEnd="@dimen/margin_border_15"
+            android:background="#00FFFFFF"
+            android:src="@drawable/message_box"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_border_7"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_border_7"
+            android:layout_marginEnd="@dimen/margin_border_7"
+            app:cardCornerRadius="@dimen/card_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_card_up_and_down"
+                android:layout_marginBottom="@dimen/margin_card_up_and_down"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_study_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:text="拍照学习"
+                    android:textColor="@color/black_222"
+                    app:drawableTopCompat="@drawable/ic_task_photo_icon" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="25dp"
+                    android:background="@color/divide_line_color" />
+
+                <TextView
+                    android:id="@+id/tv_study_exercise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:drawablePadding="3dp"
+                    android:gravity="center"
+                    android:text="专项练习"
+                    android:textColor="@color/black_222"
+                    app:drawableTopCompat="@drawable/ic_task_exercise_icon" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="25dp"
+                    android:background="@color/divide_line_color" />
+
+                <TextView
+                    android:id="@+id/tv_study_dictionary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:drawablePadding="6dp"
+                    android:gravity="center"
+                    android:text="词典翻译"
+                    android:textColor="@color/black_222"
+                    app:drawableTopCompat="@drawable/ic_task_dictionary_icon" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+-->
+
+    <!-- TODO RecyclerView 挡住了按钮，又是 layout_height="wrap_content" 作祟！！！-->
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/rv_study"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_border_7"
+        app:layout_constraintTop_toBottomOf="@id/tmp_study_btn_group"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+<!--
+    <include
+        android:id="@+id/tmp_study_second"
+        layout="@layout/item_study_rv_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_border_7"
+        app:layout_constraintTop_toBottomOf="@id/tmp_study_first"/>
+
+    <include
+        layout="@layout/item_study_rv_example"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_border_7"
+        app:layout_constraintBottom_toBottomOf="parent" />
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>

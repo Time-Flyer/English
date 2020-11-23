@@ -23,7 +23,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 /**
- * A ViewPager subclass enabling infinte scrolling of the viewPager elements
+ * A ViewPager subclass enabling infinite scrolling of the viewPager elements
  *
  * When used for paginating views (in opposite to fragments), no code changes
  * should be needed only change xml's from <android.support.v4.view.ViewPager>
