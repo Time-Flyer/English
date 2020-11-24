@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.english.R
@@ -45,27 +44,18 @@ class StudyFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Log.i("调用", "create view")
         if (mRootView == null) {
-            Log.i("调用", "create view 内")
+            Log.i("调用", "create view 新建")
             mRootView = inflater.inflate(R.layout.fragment_study, container, false)
         }
         return mRootView
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        activity?.let {
-            Log.i("调用", "view created")
-            initView()
-            initEvents()
-        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
         Log.i("调用", "activity created")
-
+        initView()
+        initEvents()
     }
 
     private fun goCamera() {
@@ -155,6 +145,7 @@ class StudyFragment : Fragment() {
         for (i in 0 until 3) {
             val task = StudyTask(
                 day = "11月20日 星期五",
+                isFirst = i == 0,
                 title = "二年级词汇句型[休闲时光]",
                 type = "跟读",
                 grade = "全国小学二年级",
@@ -165,6 +156,7 @@ class StudyFragment : Fragment() {
         for (i in 0 until 3) {
             val task = StudyTask(
                 day = "11月19日 星期四",
+                isFirst = i == 0,
                 title = "二年级对话练习[休闲时光]",
                 type = "对话",
                 grade = "全国小学二年级",

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <dimen name="txt_10">10sp</dimen>
     <dimen name="card_radius">15dp</dimen>
     <dimen name="margin_border_7">7dp</dimen>
     <dimen name="margin_border_15">15dp</dimen>
     <dimen name="margin_card_up_and_down">15dp</dimen>
+    <dimen name="design_bottom_navigation_text_size" tools:override="true">12sp</dimen>
+    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">12sp</dimen>
+    <dimen name="design_bottom_navigation_margin" tools:override="true">-8dp</dimen>
 </resources>

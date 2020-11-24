@@ -19,11 +19,12 @@ class StudyAdapter(private val list: List<StudyTask>)
         }
 
         fun bindView(task: StudyTask, pos: Int) {
+            Log.i("调用", "bind view $pre")
             itemView.tv_study_rv_day.text = task.day
-            if (task.day == pre) {
-                itemView.tv_study_rv_day.visibility = View.GONE
-            } else {
+            if (task.isFirst) {
                 itemView.tv_study_rv_day.visibility = View.VISIBLE
+            } else {
+                itemView.tv_study_rv_day.visibility = View.GONE
             }
             pre = task.day
             itemView.tv_study_rv_title.text = task.title
@@ -38,6 +39,7 @@ class StudyAdapter(private val list: List<StudyTask>)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        Log.i("调用", "create view holder")
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_study_rv_main, parent, false))
     }
 
