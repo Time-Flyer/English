@@ -63,7 +63,7 @@
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="25dp"
-                android:background="@color/divide_line_color" />
+                android:background="@color/divide_line_color_study" />
 
             <TextView
                 android:id="@+id/tv_study_exercise"
@@ -106,7 +106,7 @@
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="25dp"
-                android:background="@color/divide_line_color" />
+                android:background="@color/divide_line_color_study" />
 
             <TextView
                 android:id="@+id/tv_study_dictionary"

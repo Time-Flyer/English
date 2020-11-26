@@ -3,15 +3,58 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F8F8FC" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <include layout="@layout/item_profile_header"
+        android:id="@+id/tmp_profile_top"/>
+
+    <FrameLayout
+        android:id="@+id/tmp_profile_statistics"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="我的——敬请期待"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/tmp_profile_top">
+
+        <include layout="@layout/item_profile_statistics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_border_15" />
+
+    </FrameLayout>
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner_profile_details"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_border_7"
+        app:banner_indicator_selected_color="@color/indicator_active"
+        app:banner_indicator_normal_color="@color/indicator_inactive"
+        app:layout_constraintTop_toBottomOf="@id/tmp_profile_statistics" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_profile_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_border_15"
+        android:layout_marginStart="@dimen/margin_border_15"
+        android:layout_marginEnd="@dimen/margin_border_15"
+        app:layout_constraintTop_toBottomOf="@id/banner_profile_details"
+        app:cardCornerRadius="@dimen/card_radius">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="@dimen/margin_border_7"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="设置"
+            android:textSize="15sp"
+            android:textColor="@color/black_222"
+            app:drawableStartCompat="@drawable/ic_setting" />
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

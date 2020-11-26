@@ -24,9 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.HomeActivity"
+        <activity android:name=".activity.HomeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".activity.ExerciseActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".activity.StudyDetailsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"  />
     </application>
 
 </manifest>

@@ -28,7 +28,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="3dp"
             android:text="学习"
-            android:textSize="@dimen/txt_10" />
+            android:textSize="@dimen/bottom_nav_title_size" />
 
     </LinearLayout>
 
@@ -54,7 +54,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="3dp"
             android:text="班级"
-            android:textSize="@dimen/txt_10" />
+            android:textSize="@dimen/bottom_nav_title_size" />
 
     </LinearLayout>
 
@@ -80,7 +80,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="3dp"
             android:text="我的"
-            android:textSize="@dimen/txt_10" />
+            android:textSize="@dimen/bottom_nav_title_size" />
 
     </LinearLayout>
 

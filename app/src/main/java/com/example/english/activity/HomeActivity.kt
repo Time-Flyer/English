@@ -20,8 +20,6 @@ class HomeActivity : AppCompatActivity() {
         const val PROFILE_PAGE = 2
     }
 
-    private var curSelected = 0
-
     private val mFragments = mutableListOf(
             StudyFragment(),
             ClassFragment(),
@@ -68,7 +66,6 @@ class HomeActivity : AppCompatActivity() {
         adapter.setFragments(vp_nav, mFragments)
 
         vp_nav.adapter = adapter // TODO error vp_nav must not be null
-        vp_nav.currentItem = curSelected
         vp_nav.offscreenPageLimit = mFragments.size // TODO fix error: fragment 切换时避免 createView ...
 
         bottom_nav.itemIconTintList = null // TODO fix error: disable tint effect of selected item icon.

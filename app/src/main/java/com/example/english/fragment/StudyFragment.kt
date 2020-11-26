@@ -13,8 +13,9 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.english.R
+import com.example.english.activity.ExerciseActivity
 import com.example.english.adapter.StudyAdapter
-import com.example.english.entity.StudyTask
+import com.example.english.entity.StudyTaskBean
 import com.jcodecraeer.xrecyclerview.CustomFooterViewCallBack
 import com.jcodecraeer.xrecyclerview.ProgressStyle
 import com.jcodecraeer.xrecyclerview.XRecyclerView
@@ -25,7 +26,7 @@ class StudyFragment : Fragment() {
 
     private var mRootView: View? = null
 
-    private val mTaskList = ArrayList<StudyTask>()
+    private val mTaskList = ArrayList<StudyTaskBean>()
     private lateinit var mAdapter: StudyAdapter
 
     companion object {
@@ -92,6 +93,11 @@ class StudyFragment : Fragment() {
             }
         }
 
+        tv_study_exercise.setOnClickListener {
+            val intent = Intent(mRootView?.context, ExerciseActivity::class.java)
+            startActivity(intent)
+        }
+
         rv_study.setLoadingListener(object : XRecyclerView.LoadingListener {
             override fun onRefresh() {
                 rv_study.refreshComplete()
@@ -143,7 +149,7 @@ class StudyFragment : Fragment() {
 
     private fun initTask() {
         for (i in 0 until 3) {
-            val task = StudyTask(
+            val task = StudyTaskBean(
                 day = "11月20日 星期五",
                 isFirst = i == 0,
                 title = "二年级词汇句型[休闲时光]",
@@ -154,7 +160,7 @@ class StudyFragment : Fragment() {
             mTaskList.add(task)
         }
         for (i in 0 until 3) {
-            val task = StudyTask(
+            val task = StudyTaskBean(
                 day = "11月19日 星期四",
                 isFirst = i == 0,
                 title = "二年级对话练习[休闲时光]",

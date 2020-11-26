@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/margin_border_7"
+    android:layout_marginBottom="@dimen/margin_border_7"
+    android:layout_marginStart="@dimen/margin_border_15"
+    android:layout_marginEnd="@dimen/margin_border_15" >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/card_radius"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_border_15"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_profile_rv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="我的作业成绩"
+                    android:textColor="@color/black_222"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_profile_rv_grade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="全国小学五年级"
+                    android:textColor="@color/black_222"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/margin_border_15"
+                android:layout_marginEnd="@dimen/margin_border_15"
+                android:background="#E7E7F1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="50dp"
+                android:layout_gravity="center"
+                android:text="折线图"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/margin_border_7"
+                android:layout_marginEnd="@dimen/margin_border_7"
+                android:layout_marginBottom="@dimen/margin_border_15"
+                android:background="#D3D0E2"/>
+
+            <TextView
+                android:id="@+id/tv_profile_rv_all_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin_border_15"
+                android:textColor="@color/black_222"
+                android:textSize="14sp"
+                android:text="全部详情" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,6 @@
 package com.example.english.entity
 
-data class StudyTask (
+data class StudyTaskBean (
     val day: String = "",
     val isFirst: Boolean = false,
     val title: String = "",
