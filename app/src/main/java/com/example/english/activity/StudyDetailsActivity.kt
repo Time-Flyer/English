@@ -24,7 +24,6 @@ class StudyDetailsActivity: AppCompatActivity() {
     private fun initView() {
         mab_study_details.setTitle("我的学情")
         mab_study_details.setTitleColor(Color.BLACK) // TODO bug: 设置为 R.color.black 时黑色不深
-        mab_study_details.setBackIcon(R.drawable.ic_back_black)
         mab_study_details.setOnBackClickListener(object : MyActionBar.OnBackClickListener {
             override fun backClick() {
                 finish()

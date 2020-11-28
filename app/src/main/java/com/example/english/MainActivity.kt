@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.PagerAdapter
 import com.example.english.adapter.GuidePageViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.btn_login.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,8 +42,6 @@ class MainActivity : AppCompatActivity() {
         mAdapter = GuidePageViewPagerAdapter(viewList)
 
         vp_welcome.adapter = mAdapter // TODO error fix: LoopViewPager is default!
-
-
     }
 
     private fun getData() {

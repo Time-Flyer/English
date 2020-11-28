@@ -6,8 +6,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.viewpager.widget.PagerAdapter
 import com.example.english.activity.HomeActivity
-import kotlinx.android.synthetic.main.btn_login_student.view.*
-import kotlinx.android.synthetic.main.btn_login_teacher.view.*
+import kotlinx.android.synthetic.main.btn_login.view.*
 
 // var views: Array<Int>, var activity: AppCompatActivity
 class GuidePageViewPagerAdapter(var views: List<View>) :PagerAdapter() {

@@ -14,5 +14,6 @@
     <color name="inactive">#9591A2</color>
     <color name="indicator_active">#735EDD</color>
     <color name="indicator_inactive">#979599</color>
-    <color name="page_bg_color">#B3A7F9</color>
+    <color name="page_bg_color_purple">#B3A7F9</color>
+    <color name="page_bg_color_white">#F8F8FC</color>
 </resources>

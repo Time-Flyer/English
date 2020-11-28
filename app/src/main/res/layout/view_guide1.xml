@@ -6,40 +6,13 @@
     android:layout_height="match_parent"
     android:background="@drawable/begin1">
 
-    <include layout="@layout/btn_login_teacher"/>
-
-    <include layout="@layout/btn_login_student"/>
-
-<!--    <ImageView-->
-<!--        android:id="@+id/iv_background"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:scaleType="centerCrop"-->
-<!--        android:src="@drawable/begin1"/>-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_login_as_teacher"-->
-<!--        android:layout_width="120dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@drawable/round"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginStart="50dp"-->
-<!--        android:layout_marginBottom="45dp"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="16sp"-->
-<!--        android:text="我是老师" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_login_as_student"-->
-<!--        android:layout_width="120dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@drawable/round"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginEnd="50dp"-->
-<!--        android:layout_marginBottom="45dp"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="16sp"-->
-<!--        android:text="我是学生" />-->
+    <include layout="@layout/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.913" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

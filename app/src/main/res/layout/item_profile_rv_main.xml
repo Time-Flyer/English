@@ -7,80 +7,81 @@
     android:layout_marginTop="@dimen/margin_border_7"
     android:layout_marginBottom="@dimen/margin_border_7"
     android:layout_marginStart="@dimen/margin_border_15"
-    android:layout_marginEnd="@dimen/margin_border_15" >
+    android:layout_marginEnd="@dimen/margin_border_15"
+    android:background="@drawable/shape_card_view" >
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tv_profile_rv_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="@dimen/card_radius"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="@dimen/margin_border_15"
+        android:textColor="@color/black_222"
+        android:textSize="16sp"
+        android:text="我的学习成绩"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tmp_profile_line1"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_profile_rv_grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_border_15"
+        android:textColor="@color/black_222"
+        android:textSize="14sp"
+        android:text="全国小学五年级"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tmp_profile_line1"/>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_border_15"
-                android:orientation="horizontal">
+    <View
+        android:id="@+id/tmp_profile_line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="@dimen/margin_border_15"
+        android:layout_marginEnd="@dimen/margin_border_15"
+        android:background="#E7E7F1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
-                <TextView
-                    android:id="@+id/tv_profile_rv_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:text="我的作业成绩"
-                    android:textColor="@color/black_222"
-                    android:textSize="16sp" />
+    <TextView
+        android:id="@+id/tmp_profile_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:text="折线图"
+        app:layout_constraintTop_toBottomOf="@id/tmp_profile_line1"
+        app:layout_constraintBottom_toTopOf="@id/tmp_profile_line2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
-                <TextView
-                    android:id="@+id/tv_profile_rv_grade"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:text="全国小学五年级"
-                    android:textColor="@color/black_222"
-                    android:textSize="14sp" />
+    <View
+        android:id="@+id/tmp_profile_line2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/margin_border_7"
+        android:layout_marginEnd="@dimen/margin_border_7"
+        android:layout_marginTop="@dimen/margin_border_15"
+        android:layout_marginBottom="@dimen/margin_border_15"
+        android:background="#D3D0E2"
+        app:layout_constraintTop_toBottomOf="@id/tmp_profile_img"
+        app:layout_constraintBottom_toTopOf="@id/tv_profile_rv_all_details"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="@dimen/margin_border_15"
-                android:layout_marginEnd="@dimen/margin_border_15"
-                android:background="#E7E7F1"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="50dp"
-                android:layout_gravity="center"
-                android:text="折线图"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="@dimen/margin_border_7"
-                android:layout_marginEnd="@dimen/margin_border_7"
-                android:layout_marginBottom="@dimen/margin_border_15"
-                android:background="#D3D0E2"/>
-
-            <TextView
-                android:id="@+id/tv_profile_rv_all_details"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="@dimen/margin_border_15"
-                android:textColor="@color/black_222"
-                android:textSize="14sp"
-                android:text="全部详情" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/tv_profile_rv_all_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_border_15"
+        android:textColor="@color/black_222"
+        android:textSize="14sp"
+        android:text="全部详情"
+        app:layout_constraintTop_toBottomOf="@id/tmp_profile_line2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

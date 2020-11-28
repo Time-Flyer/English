@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <dimen name="bottom_nav_title_size">10sp</dimen>
+    <dimen name="exercise_select_task_icon_title_size">16sp</dimen>
     <dimen name="profile_statistics_number_size">24sp</dimen>
     <dimen name="profile_statistics_type_size">12sp</dimen>
     <dimen name="profile_statistics_units_size">10sp</dimen>
     <dimen name="card_radius">15dp</dimen>
     <dimen name="margin_border_7">7dp</dimen>
     <dimen name="margin_border_15">15dp</dimen>
-    <dimen name="margin_card_up_and_down">15dp</dimen>
-    <dimen name="exercise_icon_len">164dp</dimen>
+    <dimen name="exercise_icon_len">160dp</dimen>
     <dimen name="exercise_margin_30">30dp</dimen>
     <dimen name="exercise_margin_50">50dp</dimen>
     <dimen name="design_bottom_navigation_text_size" tools:override="true">12sp</dimen>

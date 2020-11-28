@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">English</string>
+    <string name="exercise_book_sentence">专项词汇训练</string>
+    <string name="exercise_situation_sentence">情景对话</string>
+    <string name="exercise_word_spell">单词拼读</string>
+    <string name="exercise_grammar_video">新概念语法课</string>
 </resources>
