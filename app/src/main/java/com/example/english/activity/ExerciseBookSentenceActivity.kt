@@ -9,7 +9,6 @@ import android.widget.Toast
 import com.example.english.R
 import com.example.english.util.MyActionBar
 import kotlinx.android.synthetic.main.activity_exercise_book_sentence.*
-import kotlinx.android.synthetic.main.activity_exercise_situation_sentence.*
 
 class ExerciseBookSentenceActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

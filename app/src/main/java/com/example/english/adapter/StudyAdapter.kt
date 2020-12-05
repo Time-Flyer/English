@@ -30,7 +30,7 @@ class StudyAdapter(private val list: List<StudyTaskBean>)
             itemView.tv_study_rv_title.text = taskBean.title
             itemView.tv_study_rv_type.text = taskBean.type
             itemView.tv_study_rv_grade.text = taskBean.grade
-            itemView.tv_study_rv_time.text = taskBean.time
+            itemView.tv_study_rv_time.text = taskBean.beginTime
 
             itemView.cv_study_rv_item.setOnClickListener {
                 Toast.makeText(itemView.context, "点击了第" + pos + "个item", Toast.LENGTH_SHORT).show()

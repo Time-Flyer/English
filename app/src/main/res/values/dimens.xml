@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- 文字 -->
     <dimen name="bottom_nav_title_size">10sp</dimen>
-    <dimen name="exercise_select_task_icon_title_size">16sp</dimen>
-    <dimen name="profile_statistics_number_size">24sp</dimen>
-    <dimen name="profile_statistics_type_size">12sp</dimen>
-    <dimen name="profile_statistics_units_size">10sp</dimen>
-    <dimen name="card_radius">15dp</dimen>
-    <dimen name="margin_border_7">7dp</dimen>
-    <dimen name="margin_border_15">15dp</dimen>
-    <dimen name="exercise_icon_len">160dp</dimen>
-    <dimen name="exercise_margin_30">30dp</dimen>
-    <dimen name="exercise_margin_50">50dp</dimen>
+    <dimen name="action_bar_title_size">17sp</dimen>
+    <dimen name="title_size">16sp</dimen>
+    <dimen name="number_size">24sp</dimen>
+    <dimen name="number_type_size">12sp</dimen>
+    <dimen name="number_unit_size">10sp</dimen>
+    <dimen name="class_broadcast_size">13sp</dimen>
+    <dimen name="study_rv_title_size">18sp</dimen>
+    <dimen name="study_rv_content_size">14sp</dimen>
+    <dimen name="study_rv_content_size_little">13sp</dimen>
+    <dimen name="profile_rv_title_size">15sp</dimen>
+    <!-- margin -->
+    <dimen name="margin_border_8">8dp</dimen>
+    <dimen name="margin_border_16">16dp</dimen>
+    <dimen name="margin_border_24">24dp</dimen>
+    <dimen name="margin_border_32">32dp</dimen>
+    <dimen name="margin_border_48">48dp</dimen>
+    <!-- padding -->
+    <dimen name="padding_8">8dp</dimen>
+    <dimen name="padding_16">16dp</dimen>
+    <dimen name="padding_24">24dp</dimen>
+    <dimen name="padding_32">32dp</dimen>
+    <!-- drawable padding -->
+    <dimen name="drawable_padding_5">5dp</dimen>
+    <dimen name="drawable_padding_24">24dp</dimen>
+    <!-- 长度 -->
+    <dimen name="line_one_margin_top">15dp</dimen>
+    <dimen name="line_two_margin_top">19dp</dimen>
+    <dimen name="line_three_margin_top">23dp</dimen>
+    <!-- 覆盖 -->
     <dimen name="design_bottom_navigation_text_size" tools:override="true">12sp</dimen>
     <dimen name="design_bottom_navigation_active_text_size" tools:override="true">12sp</dimen>
     <dimen name="design_bottom_navigation_margin" tools:override="true">-8dp</dimen>

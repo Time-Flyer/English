@@ -2,7 +2,6 @@ package com.example.english.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.ViewPager
 import com.example.english.R
 import com.example.english.adapter.HomeActViewPagerAdapter
@@ -10,7 +9,6 @@ import com.example.english.fragment.ClassFragment
 import com.example.english.fragment.ProfileFragment
 import com.example.english.fragment.StudyFragment
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.btn_navigation.*
 
 class HomeActivity : AppCompatActivity() {
 
@@ -65,8 +63,8 @@ class HomeActivity : AppCompatActivity() {
         val adapter = HomeActViewPagerAdapter(supportFragmentManager)
         adapter.setFragments(vp_nav, mFragments)
 
-        vp_nav.adapter = adapter // TODO error vp_nav must not be null
-        vp_nav.offscreenPageLimit = mFragments.size // TODO fix error: fragment 切换时避免 createView ...
+        vp_nav.adapter = adapter
+        vp_nav.offscreenPageLimit = mFragments.size // TODO fix error: 切换 fragment 时避免 createView ...
 
         bottom_nav.itemIconTintList = null // TODO fix error: disable tint effect of selected item icon.
     }

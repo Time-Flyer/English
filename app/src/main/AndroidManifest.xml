@@ -14,10 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.English">
         <activity
-            android:name=".activity.ExerciseSituationSentenceActivity"
+            android:name=".activity.ExerciseActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".activity.ExerciseBookSentenceActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activity.ExerciseSituationSentenceActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activity.ExerciseGrammarVideoActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".MainActivity"
@@ -30,9 +36,6 @@
         </activity>
         <activity
             android:name=".activity.HomeActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".activity.ExerciseActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".activity.StudyDetailsActivity"

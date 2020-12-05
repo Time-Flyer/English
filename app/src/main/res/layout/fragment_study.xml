@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <include layout="@layout/item_study_header"
+    <include layout="@layout/layout_study_header"
         android:id="@+id/tmp_study_top" />
 
-    <include layout="@layout/item_study_btn_group"
+    <include layout="@layout/layout_study_btn_group"
         android:id="@+id/tmp_study_btn_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_border_7"
-        android:layout_marginEnd="@dimen/margin_border_7"
+        android:layout_marginStart="@dimen/margin_border_8"
+        android:layout_marginEnd="@dimen/margin_border_8"
         app:layout_constraintTop_toBottomOf="@+id/tmp_study_top"/>
 
     <!-- TODO RecyclerView 挡住了按钮，又是 layout_height="wrap_content" 作祟！！！-->
@@ -21,7 +21,7 @@
         android:id="@+id/rv_study"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_border_7"
+        android:layout_marginTop="@dimen/margin_border_8"
         app:layout_constraintTop_toBottomOf="@id/tmp_study_btn_group"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

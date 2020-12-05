@@ -1,18 +1,14 @@
 package com.example.english.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AlphaAnimation
 import androidx.fragment.app.Fragment
 import com.example.english.R
 import com.example.english.adapter.DetailsHorizontalAdapter
 import com.example.english.entity.StatisticBean
 import com.youth.banner.config.IndicatorConfig
-import com.youth.banner.indicator.CircleIndicator
-import com.youth.banner.indicator.Indicator
 import com.youth.banner.indicator.RectangleIndicator
 import com.youth.banner.transformer.*
 import kotlinx.android.synthetic.main.fragment_profile.*
@@ -22,7 +18,7 @@ class ProfileFragment : Fragment() {
     private var mRootView: View? = null
 
     companion object {
-        public lateinit var mDataList: MutableList<StatisticBean>
+        lateinit var mDataList: MutableList<StatisticBean>
     }
 
     private lateinit var mHorizontalAdapter: DetailsHorizontalAdapter
@@ -49,14 +45,15 @@ class ProfileFragment : Fragment() {
 
         banner_profile_details.addBannerLifecycleObserver(this)
             .setAdapter(mHorizontalAdapter)
+            .setBannerGalleryEffect(20, 0)
             .setIndicator(RectangleIndicator(mRootView?.context))
             .setIndicatorRadius(0)
             .setIndicatorHeight(6)
             .setIndicatorSelectedWidth(20)
             .setIndicatorNormalWidth(10)
             .setIndicatorMargins(IndicatorConfig.Margins(0, 0, 0, 0))
-            .setPageTransformer(RotateDownPageTransformer())
-            .isAutoLoop(false)
+            .setPageTransformer(AlphaPageTransformer())
+            .isAutoLoop(true)
     }
 
     private fun initData() {

@@ -15,12 +15,13 @@
 
     <com.example.english.util.ReboundScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/exercise_margin_50"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_border_8"
         android:scrollbars="none"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mab_exercise">
+        app:layout_constraintTop_toBottomOf="@+id/mab_exercise"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -28,77 +29,79 @@
 
             <TextView
                 android:id="@+id/cv_exercise_book_sentence"
-                android:layout_width="@dimen/exercise_icon_len"
-                android:layout_height="@dimen/exercise_icon_len"
-                android:layout_marginTop="@dimen/margin_border_7"
-                android:layout_marginBottom="@dimen/margin_border_7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_border_8"
                 android:background="@drawable/shape_card_view"
-                android:paddingTop="30dp"
-                android:paddingBottom="@dimen/margin_border_7"
                 android:gravity="center"
+                android:paddingTop="@dimen/padding_24"
+                android:paddingBottom="@dimen/padding_24"
+                android:drawablePadding="@dimen/drawable_padding_24"
                 android:text="@string/exercise_book_sentence"
                 android:textColor="@color/black_222"
-                android:textSize="@dimen/exercise_select_task_icon_title_size"
+                android:textSize="@dimen/title_size"
                 app:drawableTopCompat="@drawable/ic_task_book_sentence"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/cv_exercise_word_spell"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@id/cv_exercise_situation_sentence" />
+                app:layout_constraintRight_toLeftOf="@id/cv_exercise_situation_sentence"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/cv_exercise_situation_sentence"
-                android:layout_width="@dimen/exercise_icon_len"
-                android:layout_height="@dimen/exercise_icon_len"
-                android:layout_marginTop="@dimen/margin_border_7"
-                android:layout_marginBottom="@dimen/margin_border_7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_border_8"
                 android:background="@drawable/shape_card_view"
                 android:gravity="center"
-                android:paddingTop="30dp"
-                android:paddingBottom="@dimen/margin_border_7"
+                android:paddingTop="@dimen/padding_24"
+                android:paddingBottom="@dimen/padding_24"
+                android:drawablePadding="@dimen/drawable_padding_24"
                 android:text="@string/exercise_situation_sentence"
                 android:textColor="@color/black_222"
-                android:textSize="@dimen/exercise_select_task_icon_title_size"
+                android:textSize="@dimen/title_size"
                 app:drawableTopCompat="@drawable/ic_task_situation_sentence"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/cv_exercise_grammar_video"
                 app:layout_constraintLeft_toRightOf="@id/cv_exercise_book_sentence"
-                app:layout_constraintRight_toRightOf="parent" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/cv_exercise_word_spell"
-                android:layout_width="@dimen/exercise_icon_len"
-                android:layout_height="@dimen/exercise_icon_len"
-                android:layout_marginTop="@dimen/margin_border_7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_border_8"
                 android:background="@drawable/shape_card_view"
                 android:gravity="center"
-                android:paddingTop="30dp"
-                android:paddingBottom="@dimen/margin_border_7"
+                android:paddingTop="@dimen/padding_24"
+                android:paddingBottom="@dimen/padding_24"
+                android:drawablePadding="@dimen/drawable_padding_24"
                 android:text="@string/exercise_word_spell"
                 android:textColor="@color/black_222"
-                android:textSize="@dimen/exercise_select_task_icon_title_size"
+                android:textSize="@dimen/title_size"
                 app:drawableTopCompat="@drawable/ic_task_word_spell"
-                app:layout_constraintTop_toBottomOf="@+id/cv_exercise_book_sentence"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@id/cv_exercise_grammar_video" />
+                app:layout_constraintRight_toLeftOf="@id/cv_exercise_grammar_video"
+                app:layout_constraintTop_toBottomOf="@+id/cv_exercise_book_sentence" />
 
             <TextView
                 android:id="@+id/cv_exercise_grammar_video"
-                android:layout_width="@dimen/exercise_icon_len"
-                android:layout_height="@dimen/exercise_icon_len"
-                android:layout_marginTop="@dimen/margin_border_7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_border_8"
                 android:background="@drawable/shape_card_view"
                 android:gravity="center"
-                android:paddingTop="30dp"
-                android:paddingBottom="@dimen/margin_border_7"
+                android:paddingTop="@dimen/padding_24"
+                android:paddingBottom="@dimen/padding_24"
+                android:drawablePadding="@dimen/drawable_padding_24"
                 android:text="@string/exercise_grammar_video"
                 android:textColor="@color/black_222"
-                android:textSize="@dimen/exercise_select_task_icon_title_size"
+                android:textSize="@dimen/title_size"
                 app:drawableTopCompat="@drawable/ic_task_grammar_video"
-                app:layout_constraintTop_toBottomOf="@+id/cv_exercise_situation_sentence"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/cv_exercise_word_spell"
-                app:layout_constraintRight_toRightOf="parent" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_exercise_situation_sentence" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

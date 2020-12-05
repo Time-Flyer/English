@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.PagerAdapter
 import com.example.english.adapter.GuidePageViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.btn_login.*
 
 class MainActivity : AppCompatActivity() {
 

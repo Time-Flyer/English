@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_card_view">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/line_one_margin_top"
+        android:layout_marginStart="@dimen/margin_border_24"
+        android:layout_marginEnd="@dimen/margin_border_8"
+        android:background="@color/class_three_line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv_class"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/line_two_margin_top"
+        android:layout_marginStart="@dimen/margin_border_24"
+        android:layout_marginEnd="@dimen/margin_border_8"
+        android:background="@color/class_three_line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv_class"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/line_three_margin_top"
+        android:layout_marginStart="@dimen/margin_border_24"
+        android:layout_marginEnd="@dimen/margin_border_8"
+        android:background="@color/class_three_line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv_class"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_border_8"
+        android:text="全国小学二年级"
+        android:textColor="@color/purple_400"
+        android:textSize="@dimen/title_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/line_one_margin_top"
+        android:layout_marginStart="@dimen/margin_border_8"
+        android:layout_marginEnd="@dimen/margin_border_24"
+        android:background="@color/class_three_line"
+        app:layout_constraintLeft_toRightOf="@id/tv_class"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/line_two_margin_top"
+        android:layout_marginStart="@dimen/margin_border_8"
+        android:layout_marginEnd="@dimen/margin_border_24"
+        android:background="@color/class_three_line"
+        app:layout_constraintLeft_toRightOf="@id/tv_class"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/line_three_margin_top"
+        android:layout_marginStart="@dimen/margin_border_8"
+        android:layout_marginEnd="@dimen/margin_border_24"
+        android:background="@color/class_three_line"
+        app:layout_constraintLeft_toRightOf="@id/tv_class"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_class_student_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_border_16"
+        android:text="999+"
+        android:textColor="@color/black"
+        android:textSize="@dimen/number_size"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv_class_study_task"
+        app:layout_constraintTop_toBottomOf="@id/tv_class" />
+
+    <TextView
+        android:id="@+id/tv_class_study_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_border_16"
+        android:text="233"
+        android:textColor="@color/black"
+        android:textSize="@dimen/number_size"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/tv_class_student_num"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_class" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="学生人数"
+        android:textColor="@color/black"
+        android:textSize="@dimen/number_type_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv_class_study_task"
+        app:layout_constraintTop_toBottomOf="@id/tv_class_student_num" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="学习任务"
+        android:textColor="@color/black"
+        android:textSize="@dimen/number_type_size"
+        app:layout_constraintLeft_toRightOf="@id/tv_class_student_num"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_class_study_task" />
+
+    <ImageView
+        android:id="@+id/tmp_class_broadcast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_border_24"
+        android:layout_marginTop="@dimen/margin_border_32"
+        android:layout_marginBottom="@dimen/margin_border_16"
+        android:src="@drawable/ic_broadcast"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_class_student_num" />
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner_class_broadcast"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="@dimen/margin_border_16"
+        android:layout_marginStart="@dimen/margin_border_8"
+        android:layout_marginEnd="@dimen/margin_border_24"
+        app:layout_constraintTop_toBottomOf="@id/tv_class_student_num"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/tmp_class_broadcast"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

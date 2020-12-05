@@ -25,8 +25,12 @@ class DetailsVerticalAdapter(private val data: MutableList<StatisticBean>)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindView(position)
-        holder.itemView.layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
         holder.itemView.tv_profile_rv_all_details.visibility = View.GONE
+        // 由于共用同一个布局，而外部使用的 ViewPager2 要求 match_parent，所以里面动态设置为 wrap_content
+        holder.itemView.layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
+        // 由于外部设置了画廊效果，所以里面动态调整布局
+        val layoutParams = holder.itemView.layoutParams as RecyclerView.LayoutParams
+        layoutParams.setMargins(32, 8, 32, 8)
     }
 
     override fun getItemCount(): Int = data.size

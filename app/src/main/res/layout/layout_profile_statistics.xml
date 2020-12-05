@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColor="@color/black"
-            android:textSize="@dimen/profile_statistics_number_size"
+            android:textSize="@dimen/number_size"
             android:textStyle="bold"
             android:text="0"/>
         <LinearLayout
@@ -32,12 +32,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black_222"
-                android:textSize="@dimen/profile_statistics_type_size"
+                android:textSize="@dimen/number_type_size"
                 android:text="学习任务"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/profile_statistics_units_size"
+                android:textSize="@dimen/number_unit_size"
                 android:text=" /次"/>
         </LinearLayout>
     </LinearLayout>
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColor="@color/black"
-            android:textSize="@dimen/profile_statistics_number_size"
+            android:textSize="@dimen/number_size"
             android:textStyle="bold"
             android:text="0"/>
         <LinearLayout
@@ -69,12 +69,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black_222"
-                android:textSize="@dimen/profile_statistics_type_size"
+                android:textSize="@dimen/number_type_size"
                 android:text="学习时长"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/profile_statistics_units_size"
+                android:textSize="@dimen/number_unit_size"
                 android:text=" /秒"/>
         </LinearLayout>
     </LinearLayout>
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColor="@color/black"
-            android:textSize="@dimen/profile_statistics_number_size"
+            android:textSize="@dimen/number_size"
             android:textStyle="bold"
             android:text="0"/>
         <LinearLayout
@@ -106,12 +106,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black_222"
-                android:textSize="@dimen/profile_statistics_type_size"
+                android:textSize="@dimen/number_type_size"
                 android:text="词汇积累"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/profile_statistics_units_size"
+                android:textSize="@dimen/number_unit_size"
                 android:text=" /个"/>
         </LinearLayout>
     </LinearLayout>
@@ -131,7 +131,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColor="@color/black"
-            android:textSize="@dimen/profile_statistics_number_size"
+            android:textSize="@dimen/number_size"
             android:textStyle="bold"
             android:text="0"/>
         <LinearLayout
@@ -143,12 +143,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black_222"
-                android:textSize="@dimen/profile_statistics_type_size"
+                android:textSize="@dimen/number_type_size"
                 android:text="句子积累"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/profile_statistics_units_size"
+                android:textSize="@dimen/number_unit_size"
                 android:text=" /个"/>
         </LinearLayout>
     </LinearLayout>

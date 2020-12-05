@@ -20,7 +20,7 @@ import com.jcodecraeer.xrecyclerview.CustomFooterViewCallBack
 import com.jcodecraeer.xrecyclerview.ProgressStyle
 import com.jcodecraeer.xrecyclerview.XRecyclerView
 import kotlinx.android.synthetic.main.fragment_study.*
-import kotlinx.android.synthetic.main.item_study_btn_group.*
+import kotlinx.android.synthetic.main.layout_study_btn_group.*
 
 class StudyFragment : Fragment() {
 
@@ -126,9 +126,6 @@ class StudyFragment : Fragment() {
 
         val footView = LayoutInflater.from(mRootView!!.context)
                 .inflate(R.layout.item_study_rv_example, rv_study.parent as ViewGroup, false)
-//        rv_study.defaultFootView.removeAllViews()
-//        rv_study.defaultFootView.addView(footView)
-//        rv_study.setFootViewText("更多", "没有了")
 
         rv_study.setFootView(footView, object: CustomFooterViewCallBack {
             override fun onLoadingMore(yourFooterView: View?) {
@@ -155,7 +152,7 @@ class StudyFragment : Fragment() {
                 title = "二年级词汇句型[休闲时光]",
                 type = "跟读",
                 grade = "全国小学二年级",
-                time = "11月22日开始"
+                beginTime = "11月22日开始"
             )
             mTaskList.add(task)
         }
@@ -166,7 +163,7 @@ class StudyFragment : Fragment() {
                 title = "二年级对话练习[休闲时光]",
                 type = "对话",
                 grade = "全国小学二年级",
-                time = "11月19日开始"
+                beginTime = "11月19日开始"
             )
             mTaskList.add(task)
         }

@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.english.R
-import kotlinx.android.synthetic.main.item_action_bar.view.*
+import kotlinx.android.synthetic.main.layout_action_bar.view.*
 
 class MyActionBar: ConstraintLayout {
 
@@ -25,7 +25,7 @@ class MyActionBar: ConstraintLayout {
     }
 
     private fun init(context: Context) {
-        LayoutInflater.from(context).inflate(R.layout.item_action_bar, this)
+        LayoutInflater.from(context).inflate(R.layout.layout_action_bar, this)
 
         ib_action_bar_back.setOnClickListener { mOnBackClickListener.backClick() }
     }

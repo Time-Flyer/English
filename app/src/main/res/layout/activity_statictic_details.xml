@@ -18,8 +18,8 @@
         android:id="@+id/rv_profile_all_details"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_border_7"
-        android:layout_marginBottom="@dimen/margin_border_15"
+        android:layout_marginTop="@dimen/margin_border_8"
+        android:layout_marginBottom="@dimen/margin_border_16"
         app:layout_constraintTop_toBottomOf="@+id/mab_study_details"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
