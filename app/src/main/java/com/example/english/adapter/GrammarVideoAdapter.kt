@@ -1,13 +1,12 @@
 package com.example.english.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.example.english.R
+import com.example.english.databinding.ItemExerciseGrammarVideoHeadBinding
+import com.example.english.databinding.ItemExerciseGrammarVideoMainBinding
 import com.example.english.entity.GrammarVideoBean
-import kotlinx.android.synthetic.main.item_exercise_grammar_video_head.view.*
-import kotlinx.android.synthetic.main.item_exercise_grammar_video_main.view.*
 
 const val VIEW_TYPE_HEAD = 2
 const val VIEW_TYPE_MAIN = 1
@@ -15,20 +14,20 @@ const val VIEW_TYPE_MAIN = 1
 class GrammarVideoAdapter(private var list: List<GrammarVideoBean>)
     : RecyclerView.Adapter<GrammarVideoAdapter.ViewHolder>() {
 
-    open inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    open inner class ViewHolder(itemBinding: ConstraintLayout) : RecyclerView.ViewHolder(itemBinding) {
         open fun bindView(pos: Int) {}
     }
 
-    inner class ViewHolderHead(itemView: View) : ViewHolder(itemView) {
+    inner class ViewHolderHead(private val itemBinding: ItemExerciseGrammarVideoHeadBinding) : ViewHolder(itemBinding.root) {
         override fun bindView(pos: Int) {
-            itemView.tv_exercise_grammar_video_level.text = "L-".plus(list[pos].level)
-            itemView.tv_exercise_grammar_video_level_title.text = list[pos].levelTitle
+            itemBinding.tvExerciseGrammarVideoLevel.text = "L-".plus(list[pos].level)
+            itemBinding.tvExerciseGrammarVideoLevelTitle.text = list[pos].levelTitle
         }
     }
 
-    inner class ViewHolderMain(itemView: View) : ViewHolder(itemView) {
+    inner class ViewHolderMain(private val itemBinding: ItemExerciseGrammarVideoMainBinding) : ViewHolder(itemBinding.root) {
         override fun bindView(pos: Int) {
-            itemView.tv_exercise_grammar_video_title.text = list[pos].title
+            itemBinding.tvExerciseGrammarVideoTitle.text = list[pos].title
         }
     }
 
@@ -36,10 +35,12 @@ class GrammarVideoAdapter(private var list: List<GrammarVideoBean>)
         val inflater = LayoutInflater.from(parent.context)
         return when (viewType) {
             VIEW_TYPE_HEAD -> {
-                ViewHolderHead(inflater.inflate(R.layout.item_exercise_grammar_video_head, parent, false))
+                ViewHolderHead(ItemExerciseGrammarVideoHeadBinding.inflate(inflater, parent, false))
+//                ViewHolderHead(inflater.inflate(R.layout.item_exercise_grammar_video_head, parent, false))
             }
             else -> {
-                ViewHolderMain(inflater.inflate(R.layout.item_exercise_grammar_video_main, parent, false))
+                ViewHolderMain(ItemExerciseGrammarVideoMainBinding.inflate(inflater, parent, false))
+//                ViewHolderMain(inflater.inflate(R.layout.item_exercise_grammar_video_main, parent, false))
             }
         }
     }

@@ -3,7 +3,6 @@ package com.example.english.activity
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
-import android.util.Log
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -147,7 +146,6 @@ class ExerciseGrammarVideoActivity : AppCompatActivity() {
                     val itemPos: Int
                     if (dy > 0) {
                         itemPos = mGridLayoutManager.findLastVisibleItemPosition()
-                        Log.i("recyclerview", "itemPos = $itemPos")
                         if (itemPos == 12) {
                             mCurrentSelectTab = 1
                         } else if (itemPos == 20) {
@@ -155,7 +153,6 @@ class ExerciseGrammarVideoActivity : AppCompatActivity() {
                         }
                     } else {
                         itemPos = mGridLayoutManager.findFirstVisibleItemPosition()
-                        Log.i("recyclerview", "itemPos = $itemPos")
                         if (itemPos == 13) {
                             mCurrentSelectTab = 1
                         } else if (itemPos == 5) {
