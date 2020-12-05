@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
@@ -104,7 +105,6 @@ class ExerciseGrammarVideoActivity : AppCompatActivity() {
             TabLayout.OnTabSelectedListener {
 
             override fun onTabSelected(tab: TabLayout.Tab) {
-                setTabTextNormal(mCurrentSelectTab)
                 mCurrentSelectTab = tab.position
                 if (!mIsScrolling) {
                     mBinding.rvExerciseGrammarVideo.smoothSnapToPosition(levelPos[mCurrentSelectTab])
@@ -113,12 +113,16 @@ class ExerciseGrammarVideoActivity : AppCompatActivity() {
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab) {
-                Log.i("recyclerview", "onTabUnselected")
                 setTabTextNormal(tab.position)
             }
 
             override fun onTabReselected(tab: TabLayout.Tab) {
-                mBinding.rvExerciseGrammarVideo.smoothSnapToPosition(levelPos[tab.position])
+                if (mCurrentSelectTab != tab.position) {
+                    setTabTextNormal(mCurrentSelectTab)
+                    mCurrentSelectTab = tab.position
+                    mBinding.rvExerciseGrammarVideo.smoothSnapToPosition(levelPos[tab.position])
+                    setTabTextBold(mCurrentSelectTab)
+                }
             }
         })
 
@@ -190,6 +194,7 @@ class ExerciseGrammarVideoActivity : AppCompatActivity() {
             .getChildAt(tabPos) as TabLayout.TabView)
             .getChildAt(1) as TextView
         textView.typeface = Typeface.DEFAULT_BOLD
+        textView.setTextColor(ContextCompat.getColor(this, R.color.tab_select))
     }
 
     private fun setTabTextNormal(tabPos: Int) {
