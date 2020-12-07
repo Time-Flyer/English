@@ -1,6 +1,7 @@
 package com.example.english.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,11 +11,16 @@ import com.example.english.adapter.ClassBroadcastAdapter
 import com.example.english.entity.ClassBroadcastBean
 import com.youth.banner.Banner
 import com.youth.banner.transformer.*
+import kotlinx.android.synthetic.main.fragment_class.*
 import kotlinx.android.synthetic.main.item_class.*
 
 class ClassFragment : Fragment() {
 
     private var mRootView: View? = null
+
+    private var mIsJoinClass = true
+    private var mHasNetwork = true
+    private var cnt = 0
 
     private lateinit var mDataList: List<ClassBroadcastBean>
 
@@ -31,8 +37,33 @@ class ClassFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        Log.i("生命周期", "class - onActivityCreated")
 
         initView()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("生命周期", "class - onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("生命周期", "class - onResume")
+        if (mIsJoinClass && mHasNetwork) {
+            layout_class.visibility = View.VISIBLE
+            layout_class_empty.visibility = View.GONE
+        } else {
+            layout_class.visibility = View.GONE
+            layout_class_empty.visibility = View.VISIBLE
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("生命周期", "class - onPause")
+        cnt++
+        mHasNetwork = cnt % 2 != 0
     }
 
     private fun initView() {

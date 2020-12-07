@@ -29,6 +29,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav"
         app:itemIconSize="48dp"
-        app:itemTextColor="@color/bnav_text" />
+        app:itemTextColor="@color/selector_bnav_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

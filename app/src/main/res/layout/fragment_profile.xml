@@ -32,7 +32,21 @@
         app:banner_indicator_normal_color="@color/indicator_inactive"
         app:layout_constraintTop_toBottomOf="@id/tmp_profile_statistics" />
 
+    <Button
+        android:id="@+id/btn_profile_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        android:drawableTop="@drawable/panda_no_network"
+        android:textColor="@color/selector_no_network_text"
+        android:text="网络不好，点击刷新"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tmp_profile_statistics"
+        app:layout_constraintBottom_toTopOf="@id/tv_profile_setting"/>
+
     <TextView
+        android:id="@+id/tv_profile_setting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_border_16"

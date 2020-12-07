@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewbinding.ViewBinding
 import com.example.english.databinding.ItemExerciseGrammarVideoHeadBinding
 import com.example.english.databinding.ItemExerciseGrammarVideoMainBinding
 import com.example.english.entity.GrammarVideoBean
@@ -14,18 +15,18 @@ const val VIEW_TYPE_MAIN = 1
 class GrammarVideoAdapter(private var list: List<GrammarVideoBean>)
     : RecyclerView.Adapter<GrammarVideoAdapter.ViewHolder>() {
 
-    open inner class ViewHolder(itemBinding: ConstraintLayout) : RecyclerView.ViewHolder(itemBinding) {
+    open inner class ViewHolder(itemBinding: ViewBinding) : RecyclerView.ViewHolder(itemBinding.root) {
         open fun bindView(pos: Int) {}
     }
 
-    inner class ViewHolderHead(private val itemBinding: ItemExerciseGrammarVideoHeadBinding) : ViewHolder(itemBinding.root) {
+    inner class ViewHolderHead(private val itemBinding: ItemExerciseGrammarVideoHeadBinding) : ViewHolder(itemBinding as ViewBinding) {
         override fun bindView(pos: Int) {
-            itemBinding.tvExerciseGrammarVideoLevel.text = "L-".plus(list[pos].level)
+            itemBinding.tvExerciseGrammarVideoLevel.text = "L->".plus(list[pos].level)
             itemBinding.tvExerciseGrammarVideoLevelTitle.text = list[pos].levelTitle
         }
     }
 
-    inner class ViewHolderMain(private val itemBinding: ItemExerciseGrammarVideoMainBinding) : ViewHolder(itemBinding.root) {
+    inner class ViewHolderMain(private val itemBinding: ItemExerciseGrammarVideoMainBinding) : ViewHolder(itemBinding as ViewBinding) {
         override fun bindView(pos: Int) {
             itemBinding.tvExerciseGrammarVideoTitle.text = list[pos].title
         }
