@@ -19,4 +19,10 @@
     <color name="page_bg_color_purple">#B3A7F9</color>
     <color name="page_bg_color_white">#F8F8FC</color>
     <color name="tab_select">#8965FE</color>
+    <color name="ss_grade_one">#83BBE2</color>
+    <color name="ss_grade_two">#B8C24A</color>
+    <color name="ss_grade_three">#ECA6B0</color>
+    <color name="ss_grade_four">#9EC3C1</color>
+    <color name="ss_grade_five">#56BB9F</color>
+    <color name="ss_grade_six">#9EA0DE</color>
 </resources>

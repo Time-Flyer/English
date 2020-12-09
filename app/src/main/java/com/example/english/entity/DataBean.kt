@@ -26,3 +26,12 @@ data class GrammarVideoBean(
     val cover: String = "",
     val title: String = ""
 )
+
+data class SituationSentenceBean(
+    val list: MutableList<SituationSentenceItemBean>
+)
+data class SituationSentenceItemBean(
+    val grade: Int,
+    val type: String = "对话大全",
+    val sum: Int = 0
+)

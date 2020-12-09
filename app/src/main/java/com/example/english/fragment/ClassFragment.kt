@@ -29,10 +29,17 @@ class ClassFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        Log.i("生命周期", "class - onCreateView")
         if (mRootView == null) {
+            Log.i("生命周期", "class - onCreateView 新建RootView")
             mRootView = inflater.inflate(R.layout.fragment_class, null)
         }
         return mRootView
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.i("生命周期", "class - onViewCreated")
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

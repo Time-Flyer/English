@@ -33,10 +33,17 @@ class ProfileFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        Log.i("生命周期", "profile - onCreateView")
         if (mRootView == null) {
+            Log.i("生命周期", "profile - onCreateView 新建RootView")
             mRootView = inflater.inflate(R.layout.fragment_profile, null)
         }
         return mRootView
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.i("生命周期", "profile - onViewCreated")
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -49,6 +56,12 @@ class ProfileFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         Log.i("生命周期", "profile - onStart")
+    }
+
+    override fun onHiddenChanged(hidden: Boolean) {
+//        super.onHiddenChanged(hidden)
+        Log.i("生命周期", "profile - onHiddenChanged")
+        Log.i("生命周期", "$userVisibleHint")
     }
 
     override fun onResume() {

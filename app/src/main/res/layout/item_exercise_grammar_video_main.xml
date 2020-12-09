@@ -9,7 +9,7 @@
         android:id="@+id/iv_exercise_grammar_video_cover"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_card_view_shadow"
+        android:background="@drawable/shape_card_view"
         android:src="@drawable/task_word_spell"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

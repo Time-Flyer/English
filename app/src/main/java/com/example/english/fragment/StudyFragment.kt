@@ -19,6 +19,7 @@ import com.example.english.entity.StudyTaskBean
 import com.jcodecraeer.xrecyclerview.CustomFooterViewCallBack
 import com.jcodecraeer.xrecyclerview.ProgressStyle
 import com.jcodecraeer.xrecyclerview.XRecyclerView
+import kotlinx.android.synthetic.main.fragment_class.*
 import kotlinx.android.synthetic.main.fragment_study.*
 import kotlinx.android.synthetic.main.layout_study_btn_group.*
 
@@ -43,20 +44,47 @@ class StudyFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        Log.i("调用", "create view")
+        Log.i("生命周期", "study - onCreateView")
         if (mRootView == null) {
-            Log.i("调用", "create view 新建")
+            Log.i("生命周期", "study - onCreateView 新建RootView")
             mRootView = inflater.inflate(R.layout.fragment_study, container, false)
         }
         return mRootView
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.i("生命周期", "study - onViewCreated")
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        Log.i("调用", "activity created")
+        Log.i("生命周期", "study - onActivityCreated")
         initView()
         initEvents()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("生命周期", "study - onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("生命周期", "study - onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("生命周期", "study - onPause")
+    }
+
+    override fun onHiddenChanged(hidden: Boolean) {
+        super.onHiddenChanged(hidden)
+        Log.i("生命周期", "study - onHiddenChanged")
+        Log.i("生命周期", "$userVisibleHint")
+        Log.i("生命周期", "hidden = $hidden")
     }
 
     private fun goCamera() {

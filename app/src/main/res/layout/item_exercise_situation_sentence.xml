@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_border_8"
+    android:background="@drawable/shape_card_view">
+
+    <TextView
+        android:id="@+id/tv_situation_sentence_grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_border_16"
+        android:layout_marginStart="@dimen/margin_border_16"
+        android:textColor="@color/white"
+        android:textSize="@dimen/action_bar_title_size"
+        android:textStyle="bold"
+        android:text="二年级"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_situation_sentence_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_border_32"
+        android:layout_marginStart="@dimen/margin_border_16"
+        android:textColor="@color/white"
+        android:textSize="@dimen/study_rv_content_size"
+        android:text="对话大全"
+        app:layout_constraintTop_toBottomOf="@id/tv_situation_sentence_grade"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_situation_sentence_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_border_24"
+        android:textColor="@color/white"
+        android:textSize="@dimen/study_rv_content_size"
+        android:text="(15组)"
+        app:layout_constraintTop_toBottomOf="@id/tv_situation_sentence_grade"
+        app:layout_constraintBottom_toBottomOf="@id/tv_situation_sentence_type"
+        app:layout_constraintLeft_toRightOf="@id/tv_situation_sentence_type"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
