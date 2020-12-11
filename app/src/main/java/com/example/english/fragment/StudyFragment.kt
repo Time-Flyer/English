@@ -3,23 +3,23 @@ package com.example.english.fragment
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.english.R
 import com.example.english.activity.ExerciseActivity
+import com.example.english.activity.WebViewActivity
 import com.example.english.adapter.StudyAdapter
 import com.example.english.entity.StudyTaskBean
 import com.jcodecraeer.xrecyclerview.CustomFooterViewCallBack
 import com.jcodecraeer.xrecyclerview.ProgressStyle
 import com.jcodecraeer.xrecyclerview.XRecyclerView
-import kotlinx.android.synthetic.main.fragment_class.*
 import kotlinx.android.synthetic.main.fragment_study.*
 import kotlinx.android.synthetic.main.layout_study_btn_group.*
 
@@ -31,12 +31,24 @@ class StudyFragment : Fragment() {
     private lateinit var mAdapter: StudyAdapter
 
     companion object {
-        private const val REQUEST_PERMISSION_CODE = 1
         private val REQUEST_PERMISSIONS = arrayOf(
-                android.Manifest.permission.CAMERA,
-                android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                android.Manifest.permission.READ_EXTERNAL_STORAGE
+            android.Manifest.permission.CAMERA,
+            android.Manifest.permission.READ_EXTERNAL_STORAGE
         )
+    }
+
+    private val mRequestForActivityResult = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
+        var granted = true
+        for (permission in REQUEST_PERMISSIONS) {
+            if (it[permission] == false) {
+                granted = false
+                break
+            }
+        }
+        if (granted) {
+            val intent = Intent(mRootView?.context, WebViewActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     init {
@@ -87,42 +99,36 @@ class StudyFragment : Fragment() {
         Log.i("生命周期", "hidden = $hidden")
     }
 
-    private fun goCamera() {
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivity(intent)
-    }
-
     private fun checkRequiredPermission(): Boolean {
         val deniedPermissions = mutableListOf<String>()
         for (permission in REQUEST_PERMISSIONS) {
-            if (ContextCompat.checkSelfPermission(mRootView!!.context,permission) == PackageManager.PERMISSION_DENIED) {
+            if (ContextCompat.checkSelfPermission(mRootView!!.context, permission) == PackageManager.PERMISSION_DENIED) {
                 deniedPermissions.add(permission)
             }
         }
         if (deniedPermissions.isEmpty().not()) {
-            requestPermissions(deniedPermissions.toTypedArray(), REQUEST_PERMISSION_CODE)
+            mRequestForActivityResult.launch(deniedPermissions.toTypedArray())
         }
         return deniedPermissions.isEmpty()
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        when (requestCode) {
-            REQUEST_PERMISSION_CODE -> {
-
-            }
-        }
-    }
-
     private fun initEvents() {
         tv_study_photo.setOnClickListener {
-            requestPermissions(REQUEST_PERMISSIONS, REQUEST_PERMISSION_CODE)
             if (checkRequiredPermission()) {
-                goCamera()
+                val intent = Intent(mRootView?.context, WebViewActivity::class.java)
+                startActivity(intent)
             }
         }
 
         tv_study_exercise.setOnClickListener {
             val intent = Intent(mRootView?.context, ExerciseActivity::class.java)
+            startActivity(intent)
+        }
+
+        tv_study_dictionary.setOnClickListener {
+            val intent = Intent(mRootView?.context, WebViewActivity::class.java).apply {
+                putExtra("web_page", "http://m.youdao.com/translate?vendor=fanyi.web")
+            }
             startActivity(intent)
         }
 

@@ -60,5 +60,6 @@ dependencies {
     // RecyclerView
     implementation 'com.jcodecraeer:xrecyclerview:1.6.0'
 
-
+    // dialog
+    implementation 'com.bigkoo:alertview:1.0.3'
 }
