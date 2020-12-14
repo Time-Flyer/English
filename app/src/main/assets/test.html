@@ -5,10 +5,11 @@
         <meta name="Author" content=""/>
         <meta name="Keywords" content=""/>
         <meta name="Description" content=""/>
-        <title>H5 Get Mobile Photo</title>
+        <title>H5 & Native</title>
     </head>
     <body>
-        <script>
+
+    <script type="text/javascript">
             function previewFile1() {
                 var img = document.getElementById("preview1");
                 var file = document.getElementById("demo1").files[0];
@@ -35,7 +36,24 @@
                 }
             }
 
+            function add(x, y) {
+                sum = x + y;
+                res = `${x} + ${y} = ${sum}`; // ⚠️ 不是单引号
+                document.getElementById("btn").innerHTML = res;
+                return res
+            }
+
+            function callJS(message) {
+                alert(message);
+            }
+
+            function show() {
+                document.getElementById("btn").innerHTML = "JavaScript 按钮";
+                android.showToast("Hello World");
+            }
+
         </script>
+
         <form action="">
             <h1>pic1:
                 <input name="uploadImg1" id="demo1" onchange="previewFile1()" type="file" accept="image/*"/>
@@ -49,5 +67,8 @@
             <br/>
             <img width="960" height="540" id="preview2" src="222.jpg"/>
         </form>
+
+        <button id="btn" onclick="show()" style="width:400px;height:300px;">JavaScript 按钮</button>
+
     </body>
 </html>

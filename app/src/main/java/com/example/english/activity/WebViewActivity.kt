@@ -1,14 +1,19 @@
 package com.example.english.activity
 
+import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.view.KeyEvent
+import android.view.View
 import android.view.WindowManager
 import android.webkit.*
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
@@ -59,6 +64,14 @@ class WebViewActivity : AppCompatActivity(), OpenFileChooserCallBack {
     private var pageUrl: String? = null
 
 
+    class JavaScripObject(private val mContext: Context) {
+
+        @JavascriptInterface
+        fun showToast(toast: String) {
+            Toast.makeText(mContext, "js 调用 as 函数\n传的值为 $toast", Toast.LENGTH_SHORT).show()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivityWebviewBinding.inflate(layoutInflater)
@@ -93,17 +106,71 @@ class WebViewActivity : AppCompatActivity(), OpenFileChooserCallBack {
         }
     }
 
+    @SuppressLint("SetJavaScriptEnabled", "JavascriptInterface")
     private fun initView() {
 
         val settings = mBinding.webView.settings
         settings.javaScriptEnabled = true
+        settings.javaScriptCanOpenWindowsAutomatically = true
         settings.loadWithOverviewMode = true
         settings.useWideViewPort = true
 
         if (pageUrl == null) {
+
+            mBinding.webView.addJavascriptInterface(JavaScripObject(this), "android")
+
             mBinding.webView.webChromeClient = MyWebChromeClient(this)
             mBinding.webView.loadUrl("file:///android_asset/test.html")
+
+            mBinding.webView.postDelayed({
+                mBinding.webView.loadUrl("javascript:callJS(\"hello js\")")
+            }, 1000)
+
+            mBinding.btnWebview1.setOnClickListener {
+                mBinding.webView.post {
+                    mBinding.webView.loadUrl("javascript:callJS(\"调用JS内函数\")") // 参数是字符串，需要用转义符
+                }
+            }
+
+            mBinding.btnWebview2.setOnClickListener {
+                mBinding.webView.evaluateJavascript("javascript:add(3, 4)") { result ->
+                    Toast.makeText(this@WebViewActivity, result, Toast.LENGTH_SHORT).show()
+                }
+            }
+
         } else {
+            mBinding.btnWebview1.visibility = View.GONE
+            mBinding.btnWebview2.visibility = View.GONE
+
+            mBinding.webView.setDownloadListener { url, userAgent, contentDisposition, mimetype, contentLength ->
+                Log.i("WebView666", "Download Url = $url")
+                if (url.toString().contains(".apk")) {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url.toString())))
+                }
+            }
+
+            mBinding.webView.webViewClient = object : WebViewClient() {
+                override fun shouldOverrideUrlLoading(
+                    view: WebView?,
+                    request: WebResourceRequest?
+                ): Boolean {
+                    Log.i("WebView666", "Override Url = ${request?.url}")
+                    return super.shouldOverrideUrlLoading(view, request)
+                }
+            }
+
+            mBinding.webView.setOnKeyListener(object : View.OnKeyListener {
+                override fun onKey(v: View?, keyCode: Int, event: KeyEvent): Boolean {
+                    if (event.action == KeyEvent.ACTION_DOWN) {
+                        if (keyCode == KeyEvent.KEYCODE_BACK && mBinding.webView.canGoBack()) {
+                            mBinding.webView.goBack()
+                            return true
+                        }
+                    }
+                    return false
+                }
+            })
+
             mBinding.webView.loadUrl(pageUrl ?: "")
         }
     }
@@ -111,7 +178,6 @@ class WebViewActivity : AppCompatActivity(), OpenFileChooserCallBack {
     private fun setWebViewInitialScale() {
         val wm = this@WebViewActivity.getSystemService(WINDOW_SERVICE) as WindowManager
         val width = wm.defaultDisplay.width
-        Log.i("WebView666", "width = $width")
         when {
             width > 972 -> {
                 mBinding.webView.setInitialScale(280)
