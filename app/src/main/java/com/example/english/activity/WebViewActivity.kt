@@ -65,10 +65,16 @@ class WebViewActivity : AppCompatActivity(), OpenFileChooserCallBack {
 
 
     class JavaScripObject(private val mContext: Context) {
+        private val normal = "JS call Native\n"
 
         @JavascriptInterface
         fun showToast(toast: String) {
-            Toast.makeText(mContext, "js 调用 as 函数\n传的值为 $toast", Toast.LENGTH_SHORT).show()
+            Toast.makeText(mContext, "$normal\"$toast\" is from JS", Toast.LENGTH_SHORT).show()
+        }
+
+        @JavascriptInterface
+        fun getDataFromNative(): String {
+            return "$normal\"Hello JS\" is native data."
         }
     }
 
@@ -123,12 +129,12 @@ class WebViewActivity : AppCompatActivity(), OpenFileChooserCallBack {
             mBinding.webView.loadUrl("file:///android_asset/test.html")
 
             mBinding.webView.postDelayed({
-                mBinding.webView.loadUrl("javascript:callJS(\"hello js\")")
+                mBinding.webView.loadUrl("javascript:callJS(\"Hello JS\")") // 参数是字符串，需要用转义符
             }, 1000)
 
             mBinding.btnWebview1.setOnClickListener {
                 mBinding.webView.post {
-                    mBinding.webView.loadUrl("javascript:callJS(\"调用JS内函数\")") // 参数是字符串，需要用转义符
+                    mBinding.webView.loadUrl("javascript:clickPrompt()")
                 }
             }
 

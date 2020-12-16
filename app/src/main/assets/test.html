@@ -39,7 +39,7 @@
             function add(x, y) {
                 sum = x + y;
                 res = `${x} + ${y} = ${sum}`; // ⚠️ 不是单引号
-                document.getElementById("btn").innerHTML = res;
+                document.getElementById("btn1").innerHTML = res;
                 return res
             }
 
@@ -47,8 +47,18 @@
                 alert(message);
             }
 
+            function getNative() {
+                res = android.getDataFromNative()
+                alert(res);
+            }
+
+            function clickPrompt() {
+                var result = prompt("js://demo?arg1=111&arg2=222");
+                callJS(result);
+            }
+
             function show() {
-                document.getElementById("btn").innerHTML = "JavaScript 按钮";
+                document.getElementById("btn1").innerHTML = "JavaScript 按钮1";
                 android.showToast("Hello World");
             }
 
@@ -68,7 +78,9 @@
             <img width="960" height="540" id="preview2" src="222.jpg"/>
         </form>
 
-        <button id="btn" onclick="show()" style="width:400px;height:300px;">JavaScript 按钮</button>
+        <button id="btn1" onclick="show()" style="width:400px;height:300px;">JavaScript 按钮1</button>
+
+        <button id="btn2" onclick="getNative()" style="width:400px;height:300px;">JavaScript 按钮2</button>
 
     </body>
 </html>

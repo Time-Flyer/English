@@ -1,10 +1,8 @@
 package com.example.english.util
 
 import android.net.Uri
-import android.webkit.JsResult
-import android.webkit.ValueCallback
-import android.webkit.WebChromeClient
-import android.webkit.WebView
+import android.webkit.*
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
 
@@ -28,6 +26,30 @@ class MyWebChromeClient(private val mOpenFileChooserCallBack: OpenFileChooserCal
         }
         alertDialog.show()
         return true
+    }
+
+    override fun onJsPrompt(
+        view: WebView?,
+        url: String?,
+        message: String?,
+        defaultValue: String?,
+        result: JsPromptResult?
+    ): Boolean {
+        val uri = Uri.parse(message)
+        if (uri.scheme.equals("js")) {
+            if (uri.authority.equals("demo")) {
+                Toast.makeText(view?.context, "JS 调用本地方法", Toast.LENGTH_SHORT).show()
+
+                val paramsCollection = uri.queryParameterNames
+                val list = mutableListOf<Int>()
+                for (i in paramsCollection) {
+                    list.add(uri.getQueryParameter(i)?.toInt()!!)
+                }
+                result?.confirm("JS 成功调用本地方法\n$list")
+                return true
+            }
+        }
+        return super.onJsPrompt(view, url, message, defaultValue, result)
     }
 
     //针对 Android 5.0+
