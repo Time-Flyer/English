@@ -13,4 +13,112 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tv_holder1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/mab_exercise_book_sentence"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_holder2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_holder1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/tv_study_report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:text="学习档案"
+        android:textColor="#47555f"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv_comprehensive_report"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:drawableTopCompat="@mipmap/ic_found_study_report" />
+
+    <TextView
+        android:id="@+id/tv_comprehensive_report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:text="综合报告"
+        android:textColor="#47555f"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/tv_study_report"
+        app:layout_constraintRight_toLeftOf="@id/tv_network_control"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:drawableTopCompat="@mipmap/ic_found_comprehensive_report" />
+
+    <ImageView
+        android:id="@+id/iv_report_notification"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:src="@drawable/number_bg"
+        android:translationX="-4dp"
+        android:translationY="4dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/tv_comprehensive_report"
+        app:layout_constraintRight_toRightOf="@id/tv_comprehensive_report" />
+
+    <TextView
+        android:id="@+id/tv_network_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:text="上网管控"
+        android:textColor="#47555f"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/tv_comprehensive_report"
+        app:layout_constraintRight_toLeftOf="@id/tv_security_desk"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:drawableTopCompat="@mipmap/ic_network_control" />
+
+    <TextView
+        android:id="@+id/tv_security_desk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:text="安全书桌"
+        android:textColor="#47555f"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/tv_network_control"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:drawableTopCompat="@mipmap/ic_found_security_desk" />
+
+    <Button
+        android:id="@+id/btn_desk_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="显示安全书桌"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_badge_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="显示小红点"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_desk_control"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

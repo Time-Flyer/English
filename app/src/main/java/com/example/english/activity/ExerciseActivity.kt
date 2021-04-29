@@ -2,6 +2,7 @@ package com.example.english.activity
 
 import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.english.R
@@ -32,6 +33,17 @@ class ExerciseActivity: AppCompatActivity() {
 
         cv_exercise_grammar_video.setOnClickListener {
             val intent = Intent(this, ExerciseGrammarVideoActivity::class.java)
+            startActivity(intent)
+        }
+
+        cv_exercise_word_spell.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("english://com.english.word?uid=110&name=张三"))
+//            val uri = Uri.parse("english://com.english.word").buildUpon()
+//            Log.d("${javaClass.simpleName} 测试", "uri = $uri")
+//            val intent = Intent(Intent.ACTION_VIEW, uri.build()).apply {
+//                putExtra("uid", "110")
+//                putExtra("name", "张三")
+//            }
             startActivity(intent)
         }
     }
